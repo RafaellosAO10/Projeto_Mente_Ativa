@@ -8,24 +8,24 @@ import { Bot, Box, Smartphone, Wifi, FileText, PiggyBank, Headset } from "lucide
 const Index = () => {
   const products = [
     {
-      title: "Planta Inteligente",
+      title: "💡 Tecnologia no Dia a Dia",
       description:
-        "Planta monitorada por sensores e controlada via WiFi com ESP32. Monitore umidade, temperatura e receba alertas no smartphone.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
-      hasWifi: true,
+        "Soluções simples e criativas que tornam as tarefas cotidianas mais práticas, inteligentes e acessíveis.",
+      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
+      hasWifi: false,
     },
     {
-      title: "Robô 4WD",
+      title: "🤝 Tecnologia Interativa",
       description:
-        "Robô com estrutura 4WD e braço robótico articulado em acrílico. Controlado por aplicativo via WiFi com ESP32.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-      hasWifi: true,
+        "Projetos que envolvem sensores, lógica e interação com o usuário, transformando ideias em sistemas inteligentes.",
+      image: "https://images.unsplash.com/photo-1604088069732-ff0249c1e824?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QWNjZXNzJTIwY29udHJvbCUyMHdpdGglMjBSRklEJTIwYW5kJTIwZGlzcGxheXxlbnwwfDB8MHx8fDA%3D",
+      hasWifi: false,
     },
     {
-      title: "Kit Arduino Iniciante",
+      title: "🌱 Tecnologias Sustentáveis",
       description:
-        "Kit completo para iniciantes com Arduino, sensores, atuadores e guia didático para projetos educacionais.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+        "Inovações voltadas para o uso consciente de recursos naturais e o cuidado com o ambiente ao nosso redor.",
+      image: "https://images.unsplash.com/photo-1584795963994-76b7a695d3c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       hasWifi: false,
     },
   ];
@@ -86,7 +86,7 @@ const Index = () => {
                 Desenvolver meu projeto
               </a>
               <a href="#produtos" className="btn-outline-secondary">
-                Ver produtos prontos
+                O que Desenvolvemos
               </a>
             </div>
             </div>
@@ -125,7 +125,7 @@ const Index = () => {
       {/* Products Section */}
       <section id="produtos" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-12">Nossos Produtos</h2>
+          <h2 className="section-title text-center mb-12">Ideias que viraram Tecnologia</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <ProductCard

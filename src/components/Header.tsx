@@ -29,7 +29,7 @@ const Header: React.FC = () => {
               O que oferecemos
             </a>
             <a href="/#produtos" className="text-gray-800 hover:text-navy font-medium">
-              Produtos
+              Nossas Soluções
             </a>
             <Button className="bg-orange hover:bg-orange/90 text-white font-medium">
               <a href="/#contato">Solicitar Projeto</a>
