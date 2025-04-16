@@ -4,16 +4,28 @@ import { Link } from "react-router-dom";
 import { Wifi, Bot } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Button } from "./ui/button";
+import { smoothScrollToTop } from "../utils/scrollToTop";
 
 const Header: React.FC = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const scrollToSection = (id: string, event: React.MouseEvent) => {
+    event.preventDefault();
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
 
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" onClick={smoothScrollToTop} className="flex items-center gap-2">
             <Bot size={28} className="text-navy" />
             <span className="text-xl font-bold text-navy">Mente Ativa</span>
           </Link>
@@ -22,7 +34,7 @@ const Header: React.FC = () => {
         {/* Menu Desktop */}
         {!isMobile && (
           <nav className="flex items-center gap-8">
-            <a href="#begin" className="text-gray-800 hover:text-navy font-medium">
+            <a href="/" className="text-gray-800 hover:text-navy font-medium">
               Início
             </a>
             <a href="/#oferecemos" className="text-gray-800 hover:text-navy font-medium">

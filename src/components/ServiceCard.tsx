@@ -3,6 +3,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Wifi } from "lucide-react";
 import { Link } from "react-router-dom";
+import { smoothScrollToTop } from "../utils/scrollToTop";
 
 interface ServiceCardProps {
   title: string;
@@ -38,7 +39,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <p className="text-gray-600 mb-4 flex-grow">{description}</p>
         <div className="mt-auto">
         {link && (
-          <Link to={link} className="block w-full">
+          <Link to={link} className="block w-full" onClick={smoothScrollToTop}>
             <Button className="w-full bg-navy hover:bg-navy/90">
               Saiba mais
             </Button>

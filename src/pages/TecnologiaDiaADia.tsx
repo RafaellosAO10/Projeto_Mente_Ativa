@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -5,48 +6,49 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Droplet, Home, Lightbulb, ShieldCheck, ThermometerSun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { smoothScrollToTop } from "../utils/scrollToTop";
 
 const TecnologiaDiaADia = () => {
   const projects = [
     {
       title: "Dispensador Automático de Álcool",
       description: "Sistema que detecta a presença das mãos e libera automaticamente a quantidade ideal de álcool em gel, evitando contato físico e desperdício.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
+      image: "https://images.unsplash.com/photo-1584483720412-ce931f4aefa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Sensor de proximidade", "Controle de dosagem", "Indicador de nível", "Operação sem contato"],
       icon: <Droplet className="h-6 w-6 text-blue-500" />,
     },
     {
       title: "Sistema de Monitoramento de Temperatura",
       description: "Monitora e registra a temperatura ambiente com envio de alertas quando os valores saem dos limites definidos pelo usuário.",
-      image: "https://i.ytimg.com/vi/SHR2nYpGUUg/maxresdefault.jpg",
+      image: "https://images.unsplash.com/photo-1526570207772-784d36084510?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Sensores de temperatura", "Registro de dados", "Alertas personalizáveis", "Interface intuitiva"],
       icon: <ThermometerSun className="h-6 w-6 text-red-500" />,
     },
     {
       title: "Assistente de Irrigação Inteligente",
       description: "Sistema que monitora a umidade do solo e irriga automaticamente as plantas quando necessário, economizando água e mantendo suas plantas saudáveis.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2023/02/sistema-de-irrigacao-com-arduino-1.jpg",
+      image: "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Sensor de umidade do solo", "Controle de válvula solenóide", "Programação por horários", "Economia de água"],
       icon: <Droplet className="h-6 w-6 text-green-500" />,
     },
     {
       title: "Controle de Iluminação Automatizado",
       description: "Sistema que ajusta a iluminação de ambientes baseado na presença de pessoas e na luminosidade natural, proporcionando conforto e economia de energia.",
-      image: "https://mundoprojetado.com.br/wp-content/uploads/2022/04/Iluminacao-automatizada-luz-LED.jpg",
+      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
       features: ["Sensor de presença", "Sensor de luminosidade", "Temporizadores", "Controle via aplicativo"],
       icon: <Lightbulb className="h-6 w-6 text-yellow-500" />,
     },
     {
       title: "Sistema de Controle de Acesso",
       description: "Solução para controle de acesso a ambientes restritos utilizando RFID, senha ou reconhecimento facial, registrando acessos e horários.",
-      image: "https://www.embarcados.com.br/wp-content/uploads/2019/08/MFRC522-Arduino-RFID-1.jpg",
+      image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Leitura de cartões RFID", "Teclado para senhas", "Registro de acessos", "Configuração de permissões"],
       icon: <ShieldCheck className="h-6 w-6 text-purple-500" />,
     },
     {
       title: "Timer Inteligente para Eletrodomésticos",
       description: "Dispositivo que programa o funcionamento automático de eletrodomésticos em horários específicos, aumentando a praticidade e reduzindo o consumo de energia.",
-      image: "https://bytedex.com.br/wp-content/uploads/2023/01/projeto-arduino-tomada.jpg",
+      image: "https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80",
       features: ["Programação de horários", "Monitoramento de consumo", "Controle via smartphone", "Funções de segurança"],
       icon: <Clock className="h-6 w-6 text-blue-400" />,
     }
