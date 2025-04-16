@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
-import ProductCard from "../components/ProductCard";
+import ServiceCard from "../components/ServiceCard";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import { Bot, Box, Smartphone, Wifi, FileText, PiggyBank, Headset } from "lucide-react";
 
 const Index = () => {
-  const products = [
+  const services = [
     {
       title: "💡 Tecnologia no Dia a Dia",
       description:
@@ -122,18 +122,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Products Section */}
+      {/* services Section */}
       <section id="produtos" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center mb-12">Ideias que viraram Tecnologia</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <ProductCard
+            {services.map((services, index) => (
+              <ServiceCard
                 key={index}
-                title={product.title}
-                description={product.description}
-                image={product.image}
-                hasWifi={product.hasWifi}
+                title={services.title}
+                description={services.description}
+                image={services.image}
+                hasWifi={services.hasWifi}
               />
             ))}
           </div>

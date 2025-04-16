@@ -4,21 +4,21 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Wifi } from "lucide-react";
 
-interface ProductCardProps {
+interface ServiceCardProps {
   title: string;
   description: string;
   image: string;
   hasWifi?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   image,
   hasWifi = false,
 }) => {
   return (
-    <Card className="product-card flex flex-col h-full">
+    <Card className="Service-card flex flex-col h-full">
       <div className="relative h-48 bg-gray-100">
         <img
           src={image}
@@ -44,4 +44,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default ServiceCard;

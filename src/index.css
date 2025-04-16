@@ -111,7 +111,7 @@ html {
     @apply border border-orange text-orange px-6 py-3 rounded-md hover:bg-orange/10 transition-all;
   }  
   
-  .product-card {
+  .service-card {
     @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300;
   }
   
