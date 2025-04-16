@@ -1,14 +1,15 @@
-
 import React from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Wifi } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   image: string;
   hasWifi?: boolean;
+  link?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -16,9 +17,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   image,
   hasWifi = false,
+  link = "",
 }) => {
   return (
-    <Card className="Service-card flex flex-col h-full">
+    <Card className="service-card flex flex-col h-full">
       <div className="relative h-48 bg-gray-100">
         <img
           src={image}
@@ -35,9 +37,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <h3 className="text-xl font-semibold text-navy mb-2">{title}</h3>
         <p className="text-gray-600 mb-4 flex-grow">{description}</p>
         <div className="mt-auto">
-          <Button className="w-full bg-navy hover:bg-navy/90">
-            Saiba mais
-          </Button>
+        {link && (
+          <Link to={link} className="block w-full">
+            <Button className="w-full bg-navy hover:bg-navy/90">
+              Saiba mais
+            </Button>
+          </Link>
+        )}
         </div>
       </div>
     </Card>

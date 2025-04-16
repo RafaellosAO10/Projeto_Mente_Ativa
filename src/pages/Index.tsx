@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
@@ -13,6 +14,7 @@ const Index = () => {
         "Soluções simples e criativas que tornam as tarefas cotidianas mais práticas, inteligentes e acessíveis.",
       image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
       hasWifi: false,
+      link: "/tecnologia-dia-a-dia",
     },
     {
       title: "🤝 Tecnologia Interativa",
@@ -20,6 +22,7 @@ const Index = () => {
         "Projetos que envolvem sensores, lógica e interação com o usuário, transformando ideias em sistemas inteligentes.",
       image: "https://images.unsplash.com/photo-1604088069732-ff0249c1e824?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QWNjZXNzJTIwY29udHJvbCUyMHdpdGglMjBSRklEJTIwYW5kJTIwZGlzcGxheXxlbnwwfDB8MHx8fDA%3D",
       hasWifi: false,
+      link: "/tecnologia-interativa",
     },
     {
       title: "🌱 Tecnologias Sustentáveis",
@@ -27,6 +30,7 @@ const Index = () => {
         "Inovações voltadas para o uso consciente de recursos naturais e o cuidado com o ambiente ao nosso redor.",
       image: "https://images.unsplash.com/photo-1584795963994-76b7a695d3c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       hasWifi: false,
+      link: "/tecnologias-sustentaveis",
     },
   ];
 
@@ -106,7 +110,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-16 bg-gray-50" id="oferecemos">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-12">O que você encontra no Mente Ativa?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-navy">O que você encontra no Mente Ativa?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div 
@@ -125,15 +129,16 @@ const Index = () => {
       {/* services Section */}
       <section id="produtos" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-12">Ideias que viraram Tecnologia</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-navy">Ideias que viraram Tecnologia</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((services, index) => (
+            {services.map((service, index) => (
               <ServiceCard
                 key={index}
-                title={services.title}
-                description={services.description}
-                image={services.image}
-                hasWifi={services.hasWifi}
+                title={service.title}
+                description={service.description}
+                image={service.image}
+                hasWifi={service.hasWifi}
+                link={service.link}
               />
             ))}
           </div>
@@ -144,7 +149,7 @@ const Index = () => {
       <section id="contato" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-title text-center">Transforme sua Ideia em Projeto</h2>
+            <h2 className="text-3xl font-bold text-center mb-4 text-navy">Transforme sua Ideia em Projeto</h2>
             <p className="text-gray-600 text-center mb-8">
             Conte com nossa equipe para transformar sua ideia em um projeto funcional e bem documentado. Preencha o formulário, envie os detalhes, que nós cuidamos da parte técnica para entregar uma solução completa e acessível.
             </p>

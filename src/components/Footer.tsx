@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold">Mente Ativa</span>
             </div>
             <p className="text-gray-300 max-w-md">
-              Projetos educacionais robóticos para estimular a criatividade e o aprendizado através da tecnologia.
+            Transformamos ideias em soluções tecnológicas criativas e personalizadas, com foco em eletrônica, automação e sistemas embarcados.
             </p>
           </div>
 
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold mb-4">Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white">
+                  <a href="/#begin" className="text-gray-300 hover:text-white">
                     Início
                   </a>
                 </li>

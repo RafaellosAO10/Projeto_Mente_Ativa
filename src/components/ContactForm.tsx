@@ -1,121 +1,126 @@
 
-import React from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
-import { useToast } from "../hooks/use-toast";
+import { CheckCircle } from "lucide-react";
 
-const formSchema = z.object({
-  name: z.string().min(3, {
-    message: "O nome deve ter pelo menos 3 caracteres",
-  }),
-  email: z.string().email({
-    message: "Por favor, forneça um email válido",
-  }),
-  phone: z.string().min(10, {
-    message: "Por favor, forneça um telefone válido",
-  }),
-  projectDescription: z.string().min(10, {
-    message: "A descrição do projeto deve ter pelo menos 10 caracteres",
-  }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
-const ContactForm: React.FC = () => {
-  const { toast } = useToast();
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      projectDescription: "",
-    },
+const ContactForm = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Form data:", data);
-    toast({
-      title: "Solicitação enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-    form.reset();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nome</FormLabel>
-              <FormControl>
-                <Input placeholder="Seu nome completo" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would normally send the data to your backend
+    console.log("Form submitted:", formData);
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    }, 1000);
+  };
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Seu email" type="email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Telefone</FormLabel>
-              <FormControl>
-                <Input placeholder="Seu telefone" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="projectDescription"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Descrição do Projeto</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Descreva o que você precisa..."
-                  className="min-h-[120px]"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button type="submit" className="w-full bg-orange hover:bg-orange/90">
-          Enviar Solicitação
+  if (isSubmitted) {
+    return (
+      <div className="text-center py-8">
+        <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+        <h3 className="text-2xl font-semibold text-navy mb-2">Mensagem Enviada!</h3>
+        <p className="text-gray-600 mb-6">
+          Obrigado por entrar em contato! Retornaremos em breve.
+        </p>
+        <Button
+          className="bg-navy hover:bg-navy/90"
+          onClick={() => setIsSubmitted(false)}
+        >
+          Enviar nova mensagem
         </Button>
-      </form>
-    </Form>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            Nome
+          </label>
+          <Input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full"
+            placeholder="Seu nome completo"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            Email
+          </label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full"
+            placeholder="seu.email@exemplo.com"
+          />
+        </div>
+      </div>
+      <div className="mb-6">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          Telefone
+        </label>
+        <Input
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          className="w-full"
+          placeholder="(00) 00000-0000"
+        />
+      </div>
+      <div className="mb-6">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          Descreva seu projeto
+        </label>
+        <Textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows={5}
+          className="w-full"
+          placeholder="Conte-nos sobre sua ideia e como podemos ajudar"
+        />
+      </div>
+      <Button
+        type="submit"
+        className="w-full bg-orange hover:bg-orange/90 text-white py-3"
+      >
+        Enviar mensagem
+      </Button>
+    </form>
   );
 };
 
