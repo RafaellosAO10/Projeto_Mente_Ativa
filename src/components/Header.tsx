@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Wifi, Bot } from "lucide-react";
+import { Wifi, Brain } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Button } from "./ui/button";
 import { smoothScrollToTop } from "../utils/scrollToTop";
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" onClick={smoothScrollToTop} className="flex items-center gap-2">
-            <Bot size={28} className="text-navy" />
+            <Brain size={30} className="text-navy" />
             <span className="text-xl font-bold text-navy">Mente Ativa</span>
           </Link>
         </div>

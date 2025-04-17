@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Bot } from "lucide-react";
+import { Brain } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="mb-8 md:mb-0">
             <div className="flex items-center gap-2 mb-4">
-              <Bot size={24} />
+              <Brain size={24} />
               <span className="text-xl font-bold">Mente Ativa</span>
             </div>
             <p className="text-gray-300 max-w-md">
