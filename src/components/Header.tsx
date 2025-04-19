@@ -1,7 +1,8 @@
 
 import React from "react";
+import BrainLogo from "./icons/BrainLogo";
 import { Link } from "react-router-dom";
-import { Wifi, Brain } from "lucide-react";
+import { BrainCircuit } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Button } from "./ui/button";
 import { smoothScrollToTop } from "../utils/scrollToTop";
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" onClick={smoothScrollToTop} className="flex items-center gap-2">
-            <Brain size={30} className="text-navy" />
+            <BrainLogo className="h-10 w-10 text-navy animate-pulse" />
             <span className="text-xl font-bold text-navy">Mente Ativa</span>
           </Link>
         </div>
