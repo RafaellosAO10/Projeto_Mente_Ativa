@@ -84,29 +84,29 @@ const Header: React.FC = () => {
 
             {isMenuOpen && (
               <div className="absolute top-full left-0 right-0 bg-white shadow-md p-4 flex flex-col gap-4">
-                <Link
-                  to="/"
+                <a
+                  href="/#"
                   className="text-gray-800 hover:text-navy font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Início
-                </Link>
-                <Link
-                  to="/#produtos"
+                </a>
+                <a
+                  href="/#oferecemos"
                   className="text-gray-800 hover:text-navy font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Produtos
-                </Link>
-                <Link
-                  to="/#contato"
+                O que oferecemos
+                </a>
+                <a
+                  href="/#produtos"
                   className="text-gray-800 hover:text-navy font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contato
-                </Link>
+                Nossas Soluções
+                </a>
                 <Button className="bg-orange hover:bg-orange/90 text-white font-medium">
-                  Solicitar Projeto
+                  <a href="/#contato">Solicitar Projeto</a>
                 </Button>
               </div>
             )}
