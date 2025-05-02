@@ -13,42 +13,42 @@ const TecnologiaDiaADia = () => {
     {
       title: "Dispensador Automático de Álcool",
       description: "Sistema que detecta a presença das mãos e libera automaticamente a quantidade ideal de álcool em gel, evitando contato físico e desperdício.",
-      image: "https://images.unsplash.com/photo-1584483720412-ce931f4aefa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
       features: ["Sensor de proximidade", "Controle de dosagem", "Indicador de nível", "Operação sem contato"],
       icon: <Droplet className="h-6 w-6 text-blue-500" />,
     },
     {
       title: "Sistema de Monitoramento de Temperatura",
       description: "Monitora e registra a temperatura ambiente com envio de alertas quando os valores saem dos limites definidos pelo usuário.",
-      image: "https://images.unsplash.com/photo-1526570207772-784d36084510?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiM74Kex5dO1_D734XPHoeCS-YC92pd-MWxQyd4Jx0FJP9NA5qq2265i99jxVVH5tpypIsJH_M84bu6Uq0We4rd4_iRtIDQeheWRsdn_2io4clFVI0A6deAt2JnOlSLmRHjy14xCLIdsniCRMbVQcboMPo2wxfBQm4hWzNFxBvj0LlIr5jPKjcoOw9Ux0Q/w1280-h720-rw/Humidity-Temperature-monitoring-system_Electrothinks.webp",
       features: ["Sensores de temperatura", "Registro de dados", "Alertas personalizáveis", "Interface intuitiva"],
       icon: <ThermometerSun className="h-6 w-6 text-red-500" />,
     },
     {
       title: "Assistente de Irrigação Inteligente",
       description: "Sistema que monitora a umidade do solo e irriga automaticamente as plantas quando necessário, economizando água e mantendo suas plantas saudáveis.",
-      image: "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://www.rain.it/wp-content/uploads/controllo-da-smart-phone-impianto-irrigazione.jpg",
       features: ["Sensor de umidade do solo", "Controle de válvula solenóide", "Programação por horários", "Economia de água"],
       icon: <Droplet className="h-6 w-6 text-green-500" />,
     },
     {
       title: "Controle de Iluminação Automatizado",
       description: "Sistema que ajusta a iluminação de ambientes baseado na presença de pessoas e na luminosidade natural, proporcionando conforto e economia de energia.",
-      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      image: "https://img.freepik.com/free-photo/hand-holding-smartphone-home_23-2150639946.jpg?semt=ais_hybrid&w=740",
       features: ["Sensor de presença", "Sensor de luminosidade", "Temporizadores", "Controle via aplicativo"],
       icon: <Lightbulb className="h-6 w-6 text-yellow-500" />,
     },
     {
       title: "Sistema de Controle de Acesso",
       description: "Solução para controle de acesso a ambientes restritos utilizando RFID, senha ou reconhecimento facial, registrando acessos e horários.",
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.postimg.cc/cJgj1NZ0/Chat-GPT-Image-2-de-mai-de-2025-18-27-36.png",
       features: ["Leitura de cartões RFID", "Teclado para senhas", "Registro de acessos", "Configuração de permissões"],
       icon: <ShieldCheck className="h-6 w-6 text-purple-500" />,
     },
     {
       title: "Timer Inteligente para Eletrodomésticos",
       description: "Dispositivo que programa o funcionamento automático de eletrodomésticos em horários específicos, aumentando a praticidade e reduzindo o consumo de energia.",
-      image: "https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80",
+      image: "https://img.freepik.com/free-photo/close-up-device-with-kitchen-control_23-2148994129.jpg?ga=GA1.1.212535024.1746222523&semt=ais_hybrid&w=740",
       features: ["Programação de horários", "Monitoramento de consumo", "Controle via smartphone", "Funções de segurança"],
       icon: <Clock className="h-6 w-6 text-blue-400" />,
     }
@@ -80,25 +80,25 @@ const TecnologiaDiaADia = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
               <Home className="h-12 w-12 text-orange mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-navy">Automação Residencial Acessível</h3>
+              <h3 className="text-xl font-semibold mb-3 text-navy">Tecnologia Útil no Cotidiano</h3>
               <p className="text-gray-600">
-                Transforme sua casa em um ambiente mais inteligente e funcional com soluções que não exigem grandes reformas ou altos investimentos.
+                Criamos soluções simples e acessíveis para quem quer tornar tarefas rotineiras mais práticas, seja em casa, no trabalho ou na escola.
               </p>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
               <ShieldCheck className="h-12 w-12 text-orange mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-navy">Segurança e Tranquilidade</h3>
+              <h3 className="text-xl font-semibold mb-3 text-navy">Projetos Inteligentes sob Medida</h3>
               <p className="text-gray-600">
-                Aumente a segurança do seu lar com projetos que monitoram e controlam acessos, alertam sobre situações imprevistas e protegem seus bens.
+                Você tem uma ideia ou precisa de um projeto, mas não sabe por onde começar? Nós ajudamos a transformar necessidades em soluções personalizadas.
               </p>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
               <Lightbulb className="h-12 w-12 text-orange mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-navy">Economia e Eficiência</h3>
+              <h3 className="text-xl font-semibold mb-3 text-navy">Inspiração para Criar</h3>
               <p className="text-gray-600">
-                Reduza o consumo de recursos como energia e água com sistemas inteligentes que otimizam o uso apenas quando necessário.
+                Nossos projetos também servem como ideias para quem precisa apresentar algo ou criar um produto funcional e criativo do zero.
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ const TecnologiaDiaADia = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/#contato">
               <Button className="bg-orange hover:bg-orange/90 text-white px-8 py-3 text-lg">
-                Solicitar um orçamento
+                Iniciar um projeto
               </Button>
             </Link>
           </div>

@@ -6,6 +6,7 @@ import { BrainCircuit } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Button } from "./ui/button";
 import { smoothScrollToTop } from "../utils/scrollToTop";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Header: React.FC = () => {
   const isMobile = useIsMobile();
@@ -112,6 +113,7 @@ const Header: React.FC = () => {
             )}
           </>
         )}
+        <WhatsAppButton phoneNumber="+5511971010517" />
       </div>
     </header>
   );

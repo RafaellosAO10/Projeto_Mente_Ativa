@@ -12,42 +12,42 @@ const TecnologiasSustentaveis = () => {
     {
       title: "Sistema de Monitoramento de Plantas",
       description: "Monitora em tempo real a umidade do solo, temperatura e luminosidade para otimizar o cultivo e reduzir o desperdício de água e nutrientes.",
-      image: "https://images.unsplash.com/photo-1584795963994-76b7a695d3c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://projects.arduinocontent.cc/cover-images/98e400e6-c8f8-474b-8517-4ccab4d3c862.png",
       features: ["Sensores de umidade", "Coleta de dados", "Alertas personalizados", "Painel de controle"],
       icon: <Leaf className="h-6 w-6 text-green-500" />,
     },
     {
       title: "Estação Meteorológica de Baixo Consumo",
       description: "Coleta e transmite dados meteorológicos utilizando energia solar, fornecendo informações precisas sobre condições climáticas locais.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2023/10/CAPA-BLOG.jpg",
+      image: "https://curtocircuito.com.br/pub/media/wysiwyg/blog/Como_fazer_um_Estacao_Meteorologica_conectada_a_Nuvem_com_ESP32/foto_inicio.jpg",
       features: ["Painel solar", "Sensores de temperatura e umidade", "Transmissão sem fio", "Bateria de longa duração"],
       icon: <Sun className="h-6 w-6 text-yellow-500" />,
     },
     {
       title: "Sistema de Captação de Água da Chuva",
       description: "Automação para coleta, filtragem e armazenamento de água pluvial, com monitoramento de nível e qualidade para uso não potável.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2023/01/capa-cisterna.jpg",
+      image: "https://media.printables.com/media/prints/6207/images/40903_502ea870-5ceb-47ca-aa7f-8b71fc270e96/thumbs/inside/1280x960/jpg/001.webp",
       features: ["Filtragem automática", "Medição de volume", "Controle de bombas", "Análise de qualidade"],
       icon: <Droplet className="h-6 w-6 text-blue-500" />,
     },
     {
       title: "Composteira Inteligente",
       description: "Sistema automatizado que controla temperatura, umidade e aeração para otimizar o processo de compostagem e transformar resíduos orgânicos em adubo de qualidade.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2023/07/Design-sem-nome-2023-07-20T103957.893.png",
+      image: "https://pyxis.nymag.com/v1/imgs/591/eea/e10d3ac5982414f4bc1116cc83abe7cc22-wizard-jr.jpg",
       features: ["Sensores de temperatura", "Controle de umidade", "Sistema de aeração", "Notificações de status"],
       icon: <Recycle className="h-6 w-6 text-green-600" />,
     },
     {
       title: "Iluminação Solar Inteligente",
       description: "Sistema de iluminação alimentado por energia solar que ajusta automaticamente a intensidade luminosa conforme a presença de pessoas e condições de luz natural.",
-      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2022/02/luminaria-solar.jpg",
+      image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/02/rastreador-solar-com-arduino-e-ldr-1920x1080.jpg",
       features: ["Painel solar integrado", "Sensor de presença", "Ajuste de intensidade", "Bateria recarregável"],
       icon: <Lightbulb className="h-6 w-6 text-yellow-400" />,
     },
     {
-      title: "Gerador de Energia Eólica Residencial",
+      title: "Gerador de Energia Eólica",
       description: "Mini turbina eólica para geração de energia em pequena escala, ideal para complementar sistemas solares em ambientes residenciais ou rurais.",
-      image: "https://bytedex.com.br/wp-content/uploads/2023/09/Gerador-de-Energia-Eolica-com-Arduino.png",
+      image: "https://how2electronics.com/wp-content/uploads/2021/03/Testing-Anemometer.jpg",
       features: ["Design compacto", "Início em baixa velocidade de vento", "Sistema de armazenamento", "Monitoramento de produção"],
       icon: <Wind className="h-6 w-6 text-blue-400" />,
     }
@@ -64,8 +64,8 @@ const TecnologiasSustentaveis = () => {
             <div className="mb-6 text-5xl">🌱</div>
             <h1 className="text-4xl font-bold mb-4">Tecnologias Sustentáveis</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              Inovações voltadas para o uso consciente de recursos naturais e o cuidado com o ambiente ao nosso redor.
-              Desenvolvemos soluções que aliam tecnologia e sustentabilidade, contribuindo para um futuro mais equilibrado.
+            Tecnologias inteligentes para gestão precisa de recursos naturais e redução de impactos ambientais. 
+            Desenvolvemos soluções práticas que integram inovação e sustentabilidade, gerando economia para produtores e ferramentas adaptáveis a diferentes necessidades.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ const TecnologiasSustentaveis = () => {
               <Leaf className="h-12 w-12 text-orange mb-4" />
               <h3 className="text-xl font-semibold mb-3 text-navy">Impacto Ambiental Reduzido</h3>
               <p className="text-gray-600">
-                Diminua sua pegada ecológica com soluções que consomem menos recursos naturais e geram menos resíduos, contribuindo para a preservação do meio ambiente.
+                Projetos que diminuem a pegada ecológica com soluções que consomem menos recursos naturais e geram menos resíduos, contribuindo para a preservação do meio ambiente.
               </p>
             </div>
             
@@ -89,7 +89,7 @@ const TecnologiasSustentaveis = () => {
               <Recycle className="h-12 w-12 text-orange mb-4" />
               <h3 className="text-xl font-semibold mb-3 text-navy">Economia a Longo Prazo</h3>
               <p className="text-gray-600">
-                Reduza custos com água, energia e outros recursos, gerando economias significativas ao longo do tempo e retorno sobre o investimento.
+                Reduzir custos com água, energia e outros recursos, gerando economias significativas ao longo do tempo e retorno sobre o investimento.
               </p>
             </div>
             
@@ -97,7 +97,7 @@ const TecnologiasSustentaveis = () => {
               <Sun className="h-12 w-12 text-orange mb-4" />
               <h3 className="text-xl font-semibold mb-3 text-navy">Autonomia Energética</h3>
               <p className="text-gray-600">
-                Ganhe independência com sistemas que geram e gerenciam sua própria energia, reduzindo a dependência de redes centralizadas e combustíveis fósseis.
+                Independência com sistemas que geram e gerenciam sua própria energia, reduzindo a dependência de redes centralizadas e combustíveis fósseis.
               </p>
             </div>
           </div>
@@ -163,7 +163,7 @@ const TecnologiasSustentaveis = () => {
                     <Leaf className="h-3 w-3" />
                   </div>
                   <p className="text-gray-600">
-                    <span className="font-medium text-navy">Economia de energia:</span> Nossas soluções de iluminação solar podem reduzir em até 90% o consumo de eletricidade para iluminação.
+                    <span className="font-medium text-navy">Economia de energia:</span> Soluções de iluminação solar podem reduzir em até 90% o consumo de eletricidade para iluminação.
                   </p>
                 </li>
                 <li className="flex">
@@ -185,7 +185,7 @@ const TecnologiasSustentaveis = () => {
                     <Recycle className="h-3 w-3" />
                   </div>
                   <p className="text-gray-600">
-                    <span className="font-medium text-navy">Redução de custos operacionais:</span> Clientes relatam economia média de 30% em contas de energia e água após implementação de nossas soluções.
+                    <span className="font-medium text-navy">Redução de custos operacionais:</span> Economia média de 30% em contas de energia e água após implementação de soluções sustentáveis.
                   </p>
                 </li>
                 <li className="flex">
@@ -201,7 +201,7 @@ const TecnologiasSustentaveis = () => {
                     <Recycle className="h-3 w-3" />
                   </div>
                   <p className="text-gray-600">
-                    <span className="font-medium text-navy">Durabilidade e baixa manutenção:</span> Nossos sistemas são projetados para alta durabilidade e manutenção reduzida, minimizando custos a longo prazo.
+                    <span className="font-medium text-navy">Durabilidade e baixa manutenção:</span> Sistemas projetados para alta durabilidade, que tem manutenção reduzida, minimizando custos a longo prazo.
                   </p>
                 </li>
               </ul>
@@ -220,7 +220,7 @@ const TecnologiasSustentaveis = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/#contato">
               <Button className="bg-orange hover:bg-orange/90 text-white px-8 py-3 text-lg">
-                Solicitar uma consulta
+                Iniciar um projeto
               </Button>
             </Link>
           </div>

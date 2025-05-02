@@ -7,6 +7,8 @@ import { CheckCircle } from "lucide-react";
 
 const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,23 +18,110 @@ const ContactForm = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
+    if (name === "phone") {
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData((prev) => ({ ...prev, [name]: formattedPhone }));
+      return;
+    }
+    
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const formatPhoneNumber = (value: string): string => {
+    const cleaned = value.replace(/\D/g, '');
+    
+    if (cleaned.length <= 2) return `(${cleaned}`;
+    if (cleaned.length <= 6) return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2)}`;
+    if (cleaned.length <= 11) return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7, 11)}`;
+    return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7, 11)}`;
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.name.trim()) {
+      setError("Por favor, insira seu nome");
+      return false;
+    }
+    
+    if (!formData.email.trim()) {
+      setError("Por favor, insira seu e-mail");
+      return false;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setError("Por favor, insira um e-mail válido");
+      return false;
+    }
+    
+    if (formData.phone && formData.phone.replace(/\D/g, '').length < 10) {
+      setError("Por favor, insira um telefone válido (com DDD)");
+      return false;
+    }
+    
+    if (!formData.message.trim()) {
+      setError("Por favor, insira sua mensagem");
+      return false;
+    }
+    
+    setError(null);
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally send the data to your backend
-    console.log("Form submitted:", formData);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    }, 1000);
+    
+    if (!validateForm()) return;
+    
+    setIsLoading(true);
+    setError(null);
+
+    // Criamos um formulário HTML tradicional para enviar
+    const form = document.createElement('form');
+    form.action = 'https://formsubmit.co/rafa_alves0901@hotmail.com';
+    form.method = 'POST';
+    form.style.display = 'none';
+
+    // Adicionamos os campos ocultos do FormSubmit
+    const nextInput = document.createElement('input');
+    nextInput.type = 'hidden';
+    nextInput.name = '_next';
+    nextInput.value = window.location.href;
+    form.appendChild(nextInput);
+
+    const captchaInput = document.createElement('input');
+    captchaInput.type = 'hidden';
+    captchaInput.name = '_captcha';
+    captchaInput.value = 'false';
+    form.appendChild(captchaInput);
+
+    const subjectInput = document.createElement('input');
+    subjectInput.type = 'hidden';
+    subjectInput.name = '_subject';
+    subjectInput.value = 'Novo contato do site!';
+    form.appendChild(subjectInput);
+
+    const templateInput = document.createElement('input');
+    templateInput.type = 'hidden';
+    templateInput.name = '_template';
+    templateInput.value = 'table';
+    form.appendChild(templateInput);
+
+    // Adicionamos os dados do formulário
+    Object.entries(formData).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    // Adicionamos o formulário ao DOM e submetemos
+    document.body.appendChild(form);
+    form.submit();
+
+    // Mostramos o estado de sucesso (opcional)
+    setIsSubmitted(true);
+    setIsLoading(false);
   };
 
   if (isSubmitted) {
@@ -45,7 +134,15 @@ const ContactForm = () => {
         </p>
         <Button
           className="bg-navy hover:bg-navy/90"
-          onClick={() => setIsSubmitted(false)}
+          onClick={() => {
+            setIsSubmitted(false);
+            setFormData({
+              name: "",
+              email: "",
+              phone: "",
+              message: "",
+            });
+          }}
         >
           Enviar nova mensagem
         </Button>
@@ -55,6 +152,12 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && (
+        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
+          {error}
+        </div>
+      )}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -68,6 +171,7 @@ const ContactForm = () => {
             required
             className="w-full"
             placeholder="Seu nome completo"
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -83,6 +187,7 @@ const ContactForm = () => {
             required
             className="w-full"
             placeholder="seu.email@exemplo.com"
+            disabled={isLoading}
           />
         </div>
       </div>
@@ -97,6 +202,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full"
           placeholder="(00) 00000-0000"
+          disabled={isLoading}
         />
       </div>
       <div className="mb-6">
@@ -112,13 +218,15 @@ const ContactForm = () => {
           rows={5}
           className="w-full"
           placeholder="Conte-nos sobre sua ideia e como podemos ajudar"
+          disabled={isLoading}
         />
       </div>
       <Button
         type="submit"
         className="w-full bg-orange hover:bg-orange/90 text-white py-3"
+        disabled={isLoading}
       >
-        Enviar mensagem
+        {isLoading ? "Enviando..." : "Enviar mensagem"}
       </Button>
     </form>
   );

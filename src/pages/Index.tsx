@@ -38,7 +38,7 @@ const Index = () => {
     {
       title: "Acessível para Todos",
       description:
-        "Criamos projetos acessíveis, com preço justo e qualidade, pra que mais pessoas possam explorar e aprender com a tecnologia embarcada.",
+        "Criamos projetos acessíveis, com preço justo e qualidade, para que mais pessoas possam explorar e aprender com a tecnologia embarcada.",
       icon: <PiggyBank className="h-12 w-12 text-orange" />,
     },
     {
