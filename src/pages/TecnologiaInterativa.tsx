@@ -26,7 +26,7 @@ const TecnologiaInterativa = () => {
     {
       title: "Jogo Interativo com Sensores de Movimento",
       description: "Jogo físico que utiliza sensores para detectar movimentos do jogador, criando uma experiência imersiva que combina o mundo real com elementos virtuais.",
-      image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-e364-61f8-acf7-4852022089d8/raw?se=2025-05-02T23%3A35%3A02Z&sp=r&sv=2024-08-04&sr=b&scid=f7ab5fef-bf5a-5c5f-a615-2a93b2fcbb17&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-02T20%3A39%3A41Z&ske=2025-05-03T20%3A39%3A41Z&sks=b&skv=2024-08-04&sig=SuWs4QOnYf52nZuO1xegtBvnbZmV%2BDpVayztjXWOGZg%3D",
+      image: "https://hackster.imgix.net/uploads/attachments/298663/FVJK9J5J20P6H9O.LARGE.jpg?auto=compress%2Cformat&w=740&h=555&fit=max",
       features: ["Sensores de movimento", "Feedback visual e sonoro", "Níveis progressivos", "Multiplayer"],
       icon: <Joystick className="h-6 w-6 text-green-500" />,
     },
@@ -40,7 +40,7 @@ const TecnologiaInterativa = () => {
     {
       title: "Leitor de Códigos QR",
       description: "Tecnologia que captura imagens e interpreta QR Codes para controle de acesso, automações ou leitura de informações.",
-      image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-9c10-61f8-b75b-5d477e892cc9/raw?se=2025-05-03T00%3A27%3A49Z&sp=r&sv=2024-08-04&sr=b&scid=b85ac446-5d8f-5071-ac25-903b37c2a48d&skoid=fa7966e7-f8ea-483c-919a-13acfd61d696&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-02T20%3A37%3A15Z&ske=2025-05-03T20%3A37%3A15Z&sks=b&skv=2024-08-04&sig=VqADrklO3eXo1mm0RkIZjW%2BYHezVQ/gZGZYniQ8OVnQ%3D",
+      image: "https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2025/04/ESP32-CAM-QR-Code-Reader-Web-Server-User-Management-Project-Demonstration.jpg?resize=750%2C422&quality=100&strip=all&ssl=1",
       features: ["Leitura rápida de QR Codes", "Custo acessível", "Uso de visão computacional", "Integração com automações"],
       icon: <QrCode className="h-6 w-6 text-teal-500" />,
     },
