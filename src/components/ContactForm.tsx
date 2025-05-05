@@ -77,7 +77,7 @@ const ContactForm = () => {
 
     // Criamos um formulário HTML tradicional para enviar
     const form = document.createElement('form');
-    form.action = 'https://formsubmit.co/rafa_alves0901@hotmail.com';
+    form.action = 'https://formsubmit.co/contato_menteativa@outlook.com.br';
     form.method = 'POST';
     form.style.display = 'none';
 
