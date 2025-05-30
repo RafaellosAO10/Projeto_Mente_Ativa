@@ -22,7 +22,7 @@ const Index = () => {
         "Soluções simples e criativas que tornam as tarefas cotidianas mais práticas, inteligentes e acessíveis.",
       image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
       hasWifi: false,
-      link: "/tecnologia-dia-a-dia",
+      link: "/tecnologia-cotidiana",
     },
     {
       title: "🤝 Tecnologia Interativa",

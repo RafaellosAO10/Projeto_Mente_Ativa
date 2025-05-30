@@ -19,7 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/tecnologia-dia-a-dia" element={<TecnologiaCotidiana />} />
+          <Route path="/tecnologia-cotidiana" element={<TecnologiaCotidiana />} />
           <Route path="/tecnologia-interativa" element={<TecnologiaInterativa />} />
           <Route path="/tecnologias-sustentaveis" element={<TecnologiaSustentavel />} />
           {/* ADICIONE TODAS AS ROTAS PERSONALIZADAS ACIMA DA ROTA "*" */}
