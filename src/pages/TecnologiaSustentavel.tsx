@@ -2,12 +2,19 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageLoader from "../components/PageLoader";
+import { usePageLoading } from "../hooks/usePageLoading";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Droplet, Leaf, Lightbulb, Recycle, Sun, Wind } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const TecnologiasSustentaveis = () => {
+const TecnologiaSustentavel = () => {
+  const isLoading = usePageLoading();
+
+  if (isLoading) {
+    return <PageLoader />;
+  }
   const projects = [
     {
       title: "Sistema de Monitoramento de Plantas",
@@ -62,7 +69,7 @@ const TecnologiasSustentaveis = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
             <div className="mb-6 text-5xl">🌱</div>
-            <h1 className="text-4xl font-bold mb-4">Tecnologias Sustentáveis</h1>
+            <h1 className="text-4xl font-bold mb-4">Tecnologia Sustentável</h1>
             <p className="text-xl max-w-3xl mx-auto">
             Tecnologias inteligentes para gestão precisa de recursos naturais e redução de impactos ambientais. 
             Desenvolvemos soluções práticas que integram inovação e sustentabilidade, gerando economia para produtores e ferramentas adaptáveis a diferentes necessidades.
@@ -232,4 +239,4 @@ const TecnologiasSustentaveis = () => {
   );
 };
 
-export default TecnologiasSustentaveis;
+export default TecnologiaSustentavel;

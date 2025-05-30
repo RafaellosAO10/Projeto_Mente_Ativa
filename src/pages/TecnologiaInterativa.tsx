@@ -2,12 +2,19 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageLoader from "../components/PageLoader";
+import { usePageLoading } from "../hooks/usePageLoading";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Cpu, QrCode, Fingerprint, Joystick, MessageSquare, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TecnologiaInterativa = () => {
+  const isLoading = usePageLoading();
+
+  if (isLoading) {
+    return <PageLoader />;
+  }
   const projects = [
     {
       title: "Sistema de Autenticação Biométrica com Leitor de Impressão Digital",

@@ -4,12 +4,20 @@ import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import PageLoader from "../components/PageLoader";
+import { usePageLoading } from "../hooks/usePageLoading";
 import { Bot, Box, Smartphone, Wifi, FileText, PiggyBank, Headset } from "lucide-react";
 
 const Index = () => {
+  const isLoading = usePageLoading(1000);
+
+  if (isLoading) {
+    return <PageLoader />;
+  }
+
   const services = [
     {
-      title: "💡 Tecnologia no Dia a Dia",
+      title: "💡 Tecnologia Cotidiana",
       description:
         "Soluções simples e criativas que tornam as tarefas cotidianas mais práticas, inteligentes e acessíveis.",
       image: "https://www.usinainfo.com.br/blog/wp-content/uploads/2020/04/Projeto-Distribuidor-Autom%C3%A1tico-de-%C3%81lcool-DIY-Sem-Arduino-1-scaled.jpg",
@@ -25,7 +33,7 @@ const Index = () => {
       link: "/tecnologia-interativa",
     },
     {
-      title: "🌱 Tecnologias Sustentáveis",
+      title: "🌱 Tecnologia Sustentável",
       description:
         "Inovações voltadas para o uso consciente de recursos naturais e o cuidado com o ambiente ao nosso redor.",
       image: "https://images.unsplash.com/photo-1584795963994-76b7a695d3c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
