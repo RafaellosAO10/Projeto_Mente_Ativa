@@ -9,6 +9,8 @@ import TecnologiaCotidiana from "./pages/TecnologiaCotidiana";
 import TecnologiaInterativa from "./pages/TecnologiaInterativa";
 import TecnologiaSustentavel from "./pages/TecnologiaSustentavel";
 
+import { Analytics } from '@vercel/analytics/react';
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +28,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );
